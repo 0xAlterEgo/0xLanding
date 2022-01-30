@@ -2,13 +2,20 @@ import { BodyNode, DomNode, el } from "@hanul/skynode";
 import { View, ViewParams } from "skyrouter";
 import Layout from "./Layout";
 
-export default class Home implements View {
+export default class Update implements View {
 
     private container: DomNode;
 
     constructor() {
         Layout.current.content.append(
-            this.container = el(".home-view",
+            this.container = el(".update-view",
+                el("aside",
+                    el("h1", "UPDATES"),
+                    el(".update-item",
+                        el("img"),
+                        el(".title", "Introducing 0xAlterEgo")
+                    )
+                )
             ).appendTo(BodyNode)
         );
     }

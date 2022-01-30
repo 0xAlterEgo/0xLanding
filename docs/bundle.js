@@ -196,7 +196,7 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\n
   \*********************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst skyrouter_1 = __webpack_require__(/*! skyrouter */ \"./node_modules/skyrouter/lib/index.js\");\nconst Home_1 = __importDefault(__webpack_require__(/*! ./view/Home */ \"./src/view/Home.ts\"));\n(async () => {\n    skyrouter_1.SkyRouter.route(\"\", Home_1.default);\n    if (sessionStorage.__spa_path) {\n        skyrouter_1.SkyRouter.go(sessionStorage.__spa_path);\n        sessionStorage.removeItem(\"__spa_path\");\n    }\n})();\n\n\n//# sourceURL=webpack:///./src/main.ts?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst skyrouter_1 = __webpack_require__(/*! skyrouter */ \"./node_modules/skyrouter/lib/index.js\");\nconst Layout_1 = __importDefault(__webpack_require__(/*! ./view/Layout */ \"./src/view/Layout.ts\"));\nconst Home_1 = __importDefault(__webpack_require__(/*! ./view/Home */ \"./src/view/Home.ts\"));\nconst Update_1 = __importDefault(__webpack_require__(/*! ./view/Update */ \"./src/view/Update.ts\"));\n(async () => {\n    skyrouter_1.SkyRouter.route(\"**\", Layout_1.default);\n    skyrouter_1.SkyRouter.route(\"\", Home_1.default);\n    skyrouter_1.SkyRouter.route(\"updates\", Update_1.default);\n    if (sessionStorage.__spa_path) {\n        skyrouter_1.SkyRouter.go(sessionStorage.__spa_path);\n        sessionStorage.removeItem(\"__spa_path\");\n    }\n})();\n\n\n//# sourceURL=webpack:///./src/main.ts?");
 
 /***/ }),
 
@@ -204,9 +204,29 @@ eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {
 /*!**************************!*\
   !*** ./src/view/Home.ts ***!
   \**************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst skynode_1 = __webpack_require__(/*! @hanul/skynode */ \"./node_modules/@hanul/skynode/lib/index.js\");\nconst Layout_1 = __importDefault(__webpack_require__(/*! ./Layout */ \"./src/view/Layout.ts\"));\nclass Home {\n    constructor() {\n        Layout_1.default.current.content.append(this.container = (0, skynode_1.el)(\".home-view\").appendTo(skynode_1.BodyNode));\n    }\n    changeParams(params, uri) { }\n    close() {\n        this.container.delete();\n    }\n}\nexports[\"default\"] = Home;\n\n\n//# sourceURL=webpack:///./src/view/Home.ts?");
+
+/***/ }),
+
+/***/ "./src/view/Layout.ts":
+/*!****************************!*\
+  !*** ./src/view/Layout.ts ***!
+  \****************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst skynode_1 = __webpack_require__(/*! @hanul/skynode */ \"./node_modules/@hanul/skynode/lib/index.js\");\nclass Home {\n    constructor() {\n        this.container = (0, skynode_1.el)(\".home-view\", (0, skynode_1.el)(\"h2\", \"책과 세계관 소개\"), (0, skynode_1.el)(\"h2\", \"커뮤니티\"), (0, skynode_1.el)(\"h2\", \"크레이터\"), (0, skynode_1.el)(\"h2\", \"인플루엔서\"), (0, skynode_1.el)(\"h2\", \"콜렉터\"), (0, skynode_1.el)(\"h2\", \"데브팀\"), (0, skynode_1.el)(\"h2\", \"로드맵\")).appendTo(skynode_1.BodyNode);\n    }\n    changeParams(params, uri) { }\n    close() {\n        clearInterval(this.interval);\n        this.container.delete();\n    }\n}\nexports[\"default\"] = Home;\n\n\n//# sourceURL=webpack:///./src/view/Home.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst skynode_1 = __webpack_require__(/*! @hanul/skynode */ \"./node_modules/@hanul/skynode/lib/index.js\");\nclass Layout {\n    constructor() {\n        Layout.current = this;\n        skynode_1.BodyNode.append((this.container = (0, skynode_1.el)(\".layout\", (0, skynode_1.el)(\"header.header\", (0, skynode_1.el)(\".nav\", (0, skynode_1.el)(\".logo\", (0, skynode_1.el)(\"a\", { href: \"/app\" }, (0, skynode_1.el)(\"h1\", \"0xALTER EGO\"))), (0, skynode_1.el)(\"input.menu-btn\", { type: \"checkbox\", id: \"menu-btn\" }), (0, skynode_1.el)(\"label.menu-icon\", { for: \"menu-btn\" }, (0, skynode_1.el)(\"span.navicon\")), (0, skynode_1.el)(\"ul.menu\", (0, skynode_1.el)(\"li.item\", (0, skynode_1.el)(\"a\", \"Home\", { href: \"/\" })), (0, skynode_1.el)(\"li.item\", (0, skynode_1.el)(\"a\", \"Manifesto\", { href: \"/manifesto\" })), (0, skynode_1.el)(\"li.item\", (0, skynode_1.el)(\"a\", \"Updates\", { href: \"/updates\" })), (0, skynode_1.el)(\"li.item\", (0, skynode_1.el)(\"a\", \"Minimap\", { href: \"/minimap\" }))))), (0, skynode_1.el)(\"main\", (this.content = (0, skynode_1.el)(\".content\"))))));\n    }\n    set title(title) {\n        document.title = `${title} | 0xAlterEgo`;\n    }\n    changeParams(params, uri) { }\n    close() {\n        this.container.delete();\n    }\n}\nexports[\"default\"] = Layout;\n\n\n//# sourceURL=webpack:///./src/view/Layout.ts?");
+
+/***/ }),
+
+/***/ "./src/view/Update.ts":
+/*!****************************!*\
+  !*** ./src/view/Update.ts ***!
+  \****************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst skynode_1 = __webpack_require__(/*! @hanul/skynode */ \"./node_modules/@hanul/skynode/lib/index.js\");\nconst Layout_1 = __importDefault(__webpack_require__(/*! ./Layout */ \"./src/view/Layout.ts\"));\nclass Update {\n    constructor() {\n        Layout_1.default.current.content.append(this.container = (0, skynode_1.el)(\".update-view\", (0, skynode_1.el)(\"aside\", (0, skynode_1.el)(\"h1\", \"UPDATES\"), (0, skynode_1.el)(\".update-item\", (0, skynode_1.el)(\"img\"), (0, skynode_1.el)(\".title\", \"Introducing 0xAlterEgo\")))).appendTo(skynode_1.BodyNode));\n    }\n    changeParams(params, uri) { }\n    close() {\n        this.container.delete();\n    }\n}\nexports[\"default\"] = Update;\n\n\n//# sourceURL=webpack:///./src/view/Update.ts?");
 
 /***/ })
 

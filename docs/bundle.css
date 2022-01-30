@@ -170,76 +170,233 @@ input {
   font-style: italic;
   font-weight: 100;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/lato/v20/S6u-w4BMUTPHjxsIPy-v.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6u-w4BMUTPHjxsIPy-v.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Lato';
   font-style: italic;
   font-weight: 300;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/lato/v20/S6u_w4BMUTPHjxsI9w2PHA.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6u_w4BMUTPHjxsI9w2PHA.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Lato';
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/lato/v20/S6u8w4BMUTPHjxswWw.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6u8w4BMUTPHjxswWw.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Lato';
   font-style: italic;
   font-weight: 700;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/lato/v20/S6u_w4BMUTPHjxsI5wqPHA.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6u_w4BMUTPHjxsI5wqPHA.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Lato';
   font-style: italic;
   font-weight: 900;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/lato/v20/S6u_w4BMUTPHjxsI3wiPHA.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6u_w4BMUTPHjxsI3wiPHA.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Lato';
   font-style: normal;
   font-weight: 100;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/lato/v20/S6u8w4BMUTPHh30wWw.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6u8w4BMUTPHh30wWw.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Lato';
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/lato/v20/S6u9w4BMUTPHh7USew8.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6u9w4BMUTPHh7USew8.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHvxk.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6uyw4BMUTPHvxk.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Lato';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/lato/v20/S6u9w4BMUTPHh6UVew8.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6u9w4BMUTPHh6UVew8.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Lato';
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/lato/v20/S6u9w4BMUTPHh50Xew8.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/lato/v22/S6u9w4BMUTPHh50Xew8.ttf) format('truetype');
 }
 body {
   font-family: 'Lato', sans-serif;
-  background: #121212;
-  color: rgba(255, 255, 255, 0.87);
+  background: #f5f5f5;
   display: flex;
   margin: auto;
+}
+.layout {
+  width: 100%;
+}
+.layout > header {
+  display: flex;
+  justify-items: center;
+  width: 100%;
+  height: 52px;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+}
+.layout > header > .nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  max-width: 1240px;
+  margin: auto;
+}
+.layout > header > .nav > .logo {
+  flex-grow: 1;
+}
+.layout > header > .nav > .logo > a > img {
+  height: 36px;
+  padding-left: 8px;
+}
+.layout > header > .nav > .logo > a > h1 {
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+}
+.layout > header > .nav > .menu-btn,
+.layout > header > .nav .menu-icon {
+  display: none;
+}
+.layout > header > .nav > .menu > .item {
+  display: flex;
+  float: left;
+  font-weight: 300;
+}
+.layout > header > .nav > .menu > .item > a {
+  cursor: pointer;
+  padding: 8px 12px 8px 12px;
+  font-size: 0.875rem;
+  text-decoration: none;
+  color: black;
+}
+.layout > header > .nav > .menu > .item > a:hover {
+  border-radius: 8px;
+  background-color: rgba(99, 46, 207, 0.3);
+}
+.layout > header > .nav > .menu > .item > a:active {
+  background-color: rgba(99, 46, 207, 0.5);
+}
+@media only screen and (max-width: 719px) {
+  .layout > header > .nav > .menu-btn {
+    display: none;
+  }
+  .layout > header > .nav > .menu-btn:checked ~ .menu {
+    display: block;
+    max-height: 52px;
+  }
+  .layout > header > .nav > .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  .layout > header > .nav > .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  .layout > header > .nav > .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  .layout > header > .nav > .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .layout > header > .nav > .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+  .layout > header > .nav > .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 8px;
+    position: relative;
+    user-select: none;
+  }
+  .layout > header > .nav > .menu-icon > .navicon {
+    background: black;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background 0.2s ease-out;
+    width: 18px;
+  }
+  .layout > header > .nav > .menu-icon .navicon:before,
+  .layout > header > .nav > .menu-icon .navicon:after {
+    background: black;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+  }
+  .layout > header > .nav > .menu-icon .navicon:before {
+    top: 5px;
+  }
+  .layout > header > .nav > .menu-icon .navicon:after {
+    top: -5px;
+  }
+  .layout > header > .nav > .menu {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    clear: both;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+  }
+  .layout > header > .nav > .menu > .item {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+  }
+  .layout > header > .nav > .menu > .item > a {
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none;
+  }
+  .layout > header > .nav > .menu > .item > a:hover {
+    color: black;
+    background-color: #333332;
+  }
+  .layout > header > .nav > .menu > .item > button {
+    margin: 0px 20px;
+  }
+}
+.layout > main {
+  max-width: 1240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  margin-top: 54px;
+}
+.update-view {
+  width: 100%;
+  margin-top: 64px;
+}
+.update-view > aside > h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+.update-view > aside > .update-item {
+  display: flex;
+  border-radius: 4px;
+  background-color: #dcdcdc;
+  height: 96px;
 }
 
