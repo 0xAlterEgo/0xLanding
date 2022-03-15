@@ -237,7 +237,8 @@ input {
 }
 body {
   font-family: 'Lato', sans-serif;
-  background: #f5f5f5;
+  background: black;
+  color: white;
   display: flex;
   margin: auto;
 }
@@ -258,21 +259,24 @@ body {
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
-  max-width: 1240px;
   margin: auto;
+  padding: 0px 20px;
 }
 .layout > header > .nav > .logo {
   flex-grow: 1;
+}
+.layout > header > .nav > .logo > a {
+  text-decoration: none;
 }
 .layout > header > .nav > .logo > a > img {
   height: 36px;
   padding-left: 8px;
 }
 .layout > header > .nav > .logo > a > h1 {
-  font-size: 1rem;
+  font-size: 32px;
   font-weight: 700;
   text-decoration: none;
-  color: black;
+  color: white;
 }
 .layout > header > .nav > .menu-btn,
 .layout > header > .nav .menu-icon {
@@ -286,9 +290,9 @@ body {
 .layout > header > .nav > .menu > .item > a {
   cursor: pointer;
   padding: 8px 12px 8px 12px;
-  font-size: 0.875rem;
   text-decoration: none;
-  color: black;
+  color: white;
+  font-size: 21px;
 }
 .layout > header > .nav > .menu > .item > a:hover {
   border-radius: 8px;
@@ -377,12 +381,15 @@ body {
   }
 }
 .layout > main {
-  max-width: 1240px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  margin-top: 54px;
+}
+.home-view > .video-container > video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
 }
 .update-view {
   width: 100%;

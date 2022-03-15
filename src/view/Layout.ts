@@ -12,11 +12,10 @@ export default class Layout implements View {
 
         BodyNode.append(
             (this.container = el(".layout",
-                el("header.header",
+                el("header",
                     el(".nav",
                         el(".logo",
                             el("a", { href: "/app" },
-                                // el("img", { src: "/images/logo.png", alt: "logo" })
                                 el("h1", "0xALTER EGO")
                             ),
                         ),

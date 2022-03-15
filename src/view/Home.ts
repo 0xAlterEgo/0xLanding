@@ -9,6 +9,11 @@ export default class Home implements View {
     constructor() {
         Layout.current.content.append(
             this.container = el(".home-view",
+                el(".video-container",
+                    el("video", { "autoplay": "", "loop": "" },
+                        el("source", { src: "/video/home.mp4", type: "video/mp4" })
+                    ),
+                ),
             ).appendTo(BodyNode)
         );
     }
