@@ -253,6 +253,7 @@ body {
   position: fixed;
   top: 0;
   z-index: 3;
+  margin-top: 8px;
 }
 .layout > header > .nav {
   display: flex;
@@ -260,7 +261,7 @@ body {
   align-items: center;
   width: 100%;
   margin: auto;
-  padding: 0px 20px;
+  padding: 0px 50px;
 }
 .layout > header > .nav > .logo {
   flex-grow: 1;
@@ -289,7 +290,7 @@ body {
 }
 .layout > header > .nav > .menu > .item > a {
   cursor: pointer;
-  padding: 8px 12px 8px 12px;
+  padding: 8px 24px;
   text-decoration: none;
   color: white;
   font-size: 21px;
@@ -386,10 +387,52 @@ body {
   justify-content: center;
   margin: auto;
 }
+.home-view {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.home-view ::-webkit-scrollbar {
+  display: none;
+}
 .home-view > .video-container > video {
   object-fit: cover;
   width: 100vw;
   height: 100vh;
+}
+.home-view > .audio-container {
+  position: absolute;
+  display: fixed;
+  bottom: 0px;
+  margin: 20px;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: rgba(99, 46, 207, 0.5);
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+}
+.home-view > .audio-container > audio {
+  display: none;
+}
+.home-view > .audio-container .play-button::before,
+.home-view > .audio-container .play-button.playing::before {
+  content: '';
+  display: inline-block;
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+  width: 0;
+  height: 12px;
+  margin-right: 10px;
+  border-color: transparent transparent transparent #FFF;
+  transition: 100ms all ease;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 6px 0 6px 8px;
+}
+.home-view > .audio-container .play-button.playing::before {
+  border-style: double;
+  border-width: 0px 0 0px 8px;
 }
 .update-view {
   width: 100%;

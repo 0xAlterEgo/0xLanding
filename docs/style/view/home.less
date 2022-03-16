@@ -1,9 +1,58 @@
 .home-view {
+    -ms-overflow-style: none;
+    scrollbar-width   : none;
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
     >.video-container {
         >video {
             object-fit: cover;
             width     : 100vw;
             height    : 100vh;
+        }
+    }
+
+    >.audio-container {
+        position        : absolute;
+        display         : fixed;
+        bottom          : 0px;
+        margin          : 20px;
+        padding         : 8px;
+        border-radius   : 8px;
+        background-color: rgba(99, 46, 207, 0.5);
+        box-sizing      : border-box;
+        cursor          : pointer;
+        display         : inline-block;
+
+        >audio {
+            display: none;
+        }
+
+        .play-button::before,
+        .play-button.playing::before {
+            content     : '';
+            display     : inline-block;
+            border      : 0;
+            background  : transparent;
+            box-sizing  : border-box;
+            width       : 0;
+            height      : 12px;
+            margin-right: 10px;
+
+            border-color: transparent transparent transparent #FFF;
+            transition  : 100ms all ease;
+            cursor      : pointer;
+
+            // play state
+            border-style: solid;
+            border-width: 6px 0 6px 8px;
+        }
+
+        .play-button.playing::before {
+            border-style: double;
+            border-width: 0px 0 0px 8px;
         }
     }
 }

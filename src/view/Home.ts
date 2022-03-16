@@ -7,6 +7,9 @@ export default class Home implements View {
     private container: DomNode;
 
     private video: DomNode<HTMLVideoElement>;
+    private audio: DomNode<HTMLAudioElement>;
+    private playButton: DomNode;
+    private isPlay: boolean = false;
 
     constructor() {
         Layout.current.content.append(
@@ -16,6 +19,22 @@ export default class Home implements View {
                         el("source", { src: "/video/home.mp4", type: "video/mp4" })
                     ),
                 ),
+                el(".audio-container", {
+                    click: () => {
+                        if (this.isPlay) {
+                            this.audio.domElement.pause();
+                            this.isPlay = false;
+                        }
+                        this.audio.domElement.play();
+                        this.isPlay = true;
+                        this.playButton.addClass("playing");
+                    }
+                },
+                    this.playButton = el(".play-button"),
+                    this.audio = el("audio", { "controls": "" },
+                        el("source", { src: "/video/bgm.mp3", type: "audio/mp3" })
+                    )
+                )
             ).appendTo(BodyNode)
         );
         this.init()

@@ -9,13 +9,6 @@ export default class Update implements View {
     constructor() {
         Layout.current.content.append(
             this.container = el(".update-view",
-                el("aside",
-                    el("h1", "UPDATES"),
-                    el(".update-item",
-                        el("img"),
-                        el(".title", "Introducing 0xAlterEgo")
-                    )
-                )
             ).appendTo(BodyNode)
         );
     }
