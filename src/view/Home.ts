@@ -24,17 +24,24 @@ export default class Home implements View {
                         if (this.isPlay) {
                             this.audio.domElement.pause();
                             this.isPlay = false;
+                            this.playButton.deleteClass("playing");
+                        } else {
+                            this.audio.domElement.play();
+                            this.isPlay = true;
+                            this.playButton.addClass("playing");
                         }
-                        this.audio.domElement.play();
-                        this.isPlay = true;
-                        this.playButton.addClass("playing");
                     }
                 },
+                    el("img", { src: "/images/view/home/play-art.png", alt: "play-art" }),
                     this.playButton = el(".play-button"),
-                    this.audio = el("audio", { "controls": "" },
-                        el("source", { src: "/video/bgm.mp3", type: "audio/mp3" })
+                    this.audio = el("audio", { "controls": "", "loop": "", },
+                        el("source", { src: "/video/bgm-loop.mp3", type: "audio/mp3" })
                     )
-                )
+                ),
+                el(".npc-container",
+                    el(".dialog", "Hello...!"),
+                    el("img.npc1", { src: "/images/view/home/npc1.png", alt: "npc" }),
+                ),
             ).appendTo(BodyNode)
         );
         this.init()

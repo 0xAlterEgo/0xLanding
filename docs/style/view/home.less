@@ -1,4 +1,5 @@
 .home-view {
+    position          : relative;
     -ms-overflow-style: none;
     scrollbar-width   : none;
 
@@ -19,12 +20,19 @@
         display         : fixed;
         bottom          : 0px;
         margin          : 20px;
-        padding         : 8px;
         border-radius   : 8px;
         background-color: rgba(99, 46, 207, 0.5);
         box-sizing      : border-box;
         cursor          : pointer;
         display         : inline-block;
+        width           : 110px;
+        display         : flex;
+        align-items     : center;
+
+        >img {
+            width : 64px;
+            height: 64px;
+        }
 
         >audio {
             display: none;
@@ -38,21 +46,50 @@
             background  : transparent;
             box-sizing  : border-box;
             width       : 0;
-            height      : 12px;
+            height      : 16px;
             margin-right: 10px;
+            margin-left : 16px;
 
-            border-color: transparent transparent transparent #FFF;
+            border-color: transparent transparent transparent white;
             transition  : 100ms all ease;
             cursor      : pointer;
 
             // play state
             border-style: solid;
-            border-width: 6px 0 6px 8px;
+            border-width: 8px 0 8px 12px;
         }
 
         .play-button.playing::before {
             border-style: double;
             border-width: 0px 0 0px 8px;
+        }
+    }
+
+    >.npc-container {
+        position: absolute;
+        top     : 65%;
+        left    : 15%;
+
+        >.npc1 {
+            max-width: 128px;
+        }
+
+        >.dialog {
+            position        : absolute;
+            top             : -20%;
+            left            : 50%;
+            font-family     : "slkscre";
+            padding         : 12px;
+            background-color: rgba(4, 5, 6, 0.85);
+            color           : white;
+            border-radius   : 8px;
+            display         : none;
+        }
+
+        &:hover {
+            >.dialog {
+                display: block;
+            }
         }
     }
 }
