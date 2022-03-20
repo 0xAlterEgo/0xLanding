@@ -15,11 +15,9 @@ export default class Layout implements View {
                 el("header",
                     el(".nav",
                         el(".logo",
-                            el("a", { href: "/app" },
-                                el("h1",
-                                    el("img.logo", { src: "/images/view/home/logo-alter-ego.png", alt: "logo-alter-ego" }),
-                                )
-                            ),
+                            el("h1",
+                                el("img", { src: "/images/view/home/logo-alter-ego.png", alt: "logo-alter-ego" }),
+                            )
                         ),
                         el("input.menu-btn", { type: "checkbox", id: "menu-btn" }),
                         el("label.menu-icon", { for: "menu-btn" },

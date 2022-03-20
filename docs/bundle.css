@@ -274,11 +274,8 @@ body {
 .layout > header > .nav > .logo {
   flex-grow: 1;
 }
-.layout > header > .nav > .logo > a {
-  text-decoration: none;
-}
-.layout > header > .nav > .logo > a > h1 > .logo {
-  height: 72px;
+.layout > header > .nav > .logo > h1 > img {
+  height: 100px;
 }
 .layout > header > .nav > .menu-btn,
 .layout > header > .nav .menu-icon {
