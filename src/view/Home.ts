@@ -32,7 +32,9 @@ export default class Home implements View {
                         }
                     }
                 },
-                    el("img", { src: "/images/view/home/player.png", alt: "player" }),
+                    el("a", { href: "https://opensea.io/collection/penguins-dwvim00c90", target: "_blank" },
+                        el("img", { src: "/images/view/home/player.png", alt: "player" })
+                    ),
                     el(".play-container",
                         this.playButton = el(".play-button"),
                         this.audio = el("audio", { "controls": "", "loop": "", },
