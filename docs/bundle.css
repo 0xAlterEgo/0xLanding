@@ -294,7 +294,7 @@ body {
   font-size: 21px;
 }
 .layout > header > .nav > .menu > .item > a > img {
-  height: 52px;
+  height: 32px;
 }
 .layout > header > .nav > .menu > .item > a:hover {
   border-radius: 8px;
