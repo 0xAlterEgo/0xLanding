@@ -466,6 +466,9 @@ body {
   color: white;
   border-radius: 8px;
 }
+.home-view > .npc-container > .dialog:hover {
+  border: solid 1px white;
+}
 .home-view > .npc-container > .wallet-dialog {
   display: none;
   position: absolute;
@@ -488,8 +491,8 @@ body {
   border-radius: 8px;
   margin-top: 12px;
 }
-.home-view > .npc-container:hover > .dialog {
-  display: block;
+.home-view > .npc-container > .wallet-dialog:hover {
+  border: solid 1px white;
 }
 .update-view {
   width: 100%;
