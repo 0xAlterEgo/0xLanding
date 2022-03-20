@@ -8,6 +8,10 @@ export default class Home implements View {
 
     private video: DomNode<HTMLVideoElement>;
     private audio: DomNode<HTMLAudioElement>;
+
+    private helloDialog: DomNode;
+    private walletDialog: DomNode;
+
     private playButton: DomNode;
     private isPlay: boolean = false;
 
@@ -43,7 +47,18 @@ export default class Home implements View {
                     ),
                 ),
                 el(".npc-container",
-                    el(".dialog", "Hello...!"),
+                    this.helloDialog = el(".dialog", "Hello...!", {
+                        click: () => {
+                            this.helloDialog.style({ display: "none" });
+                            this.walletDialog.style({ display: "block" });
+                        }
+                    }),
+                    this.walletDialog = el(".wallet-dialog", "Please connect your wallet and sign\nthis transaction to access the bot \nservices provided by 0xAlterEgo...!", {
+                        click: () => {
+
+                        },
+                    }, el("a", "CONNECT WALLET"),
+                    ),
                 ),
             ).appendTo(BodyNode)
         );
