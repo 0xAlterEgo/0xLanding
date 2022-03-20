@@ -277,15 +277,8 @@ body {
 .layout > header > .nav > .logo > a {
   text-decoration: none;
 }
-.layout > header > .nav > .logo > a > img {
-  height: 36px;
-  padding-left: 8px;
-}
-.layout > header > .nav > .logo > a > h1 {
-  font-size: 32px;
-  font-weight: 700;
-  text-decoration: none;
-  color: white;
+.layout > header > .nav > .logo > a > h1 > .logo {
+  height: 72px;
 }
 .layout > header > .nav > .menu-btn,
 .layout > header > .nav .menu-icon {
@@ -302,6 +295,9 @@ body {
   text-decoration: none;
   color: white;
   font-size: 21px;
+}
+.layout > header > .nav > .menu > .item > a > img {
+  height: 52px;
 }
 .layout > header > .nav > .menu > .item > a:hover {
   border-radius: 8px;
@@ -410,64 +406,68 @@ body {
 }
 .home-view > .audio-container {
   position: absolute;
-  display: fixed;
   bottom: 0px;
   margin: 20px;
   border-radius: 8px;
-  background-color: rgba(99, 46, 207, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   box-sizing: border-box;
   cursor: pointer;
   display: inline-block;
-  width: 110px;
+  width: 170px;
+  height: 100px;
+  display: flex;
+  align-items: flex-end;
+}
+.home-view > .audio-container > .play-container {
+  height: 100%;
   display: flex;
   align-items: center;
 }
-.home-view > .audio-container > img {
-  width: 64px;
-  height: 64px;
+.home-view > .audio-container > .play-container > img {
+  height: 120px;
+  align-items: flex-end;
 }
-.home-view > .audio-container > audio {
+.home-view > .audio-container > .play-container > audio {
   display: none;
 }
-.home-view > .audio-container .play-button::before,
-.home-view > .audio-container .play-button.playing::before {
+.home-view > .audio-container > .play-container .play-button::before,
+.home-view > .audio-container > .play-container .play-button.playing::before {
   content: '';
   display: inline-block;
   border: 0;
   background: transparent;
   box-sizing: border-box;
   width: 0;
-  height: 16px;
+  height: 32px;
   margin-right: 10px;
   margin-left: 16px;
   border-color: transparent transparent transparent white;
   transition: 100ms all ease;
   cursor: pointer;
   border-style: solid;
-  border-width: 8px 0 8px 12px;
+  border-width: 16px 0 16px 24px;
 }
-.home-view > .audio-container .play-button.playing::before {
+.home-view > .audio-container > .play-container .play-button.playing::before {
   border-style: double;
-  border-width: 0px 0 0px 8px;
+  border-width: 0px 0 0px 16px;
 }
 .home-view > .npc-container {
   position: absolute;
-  top: 65%;
-  left: 15%;
+  top: 44%;
+  left: 27%;
 }
 .home-view > .npc-container > .npc1 {
   max-width: 128px;
 }
 .home-view > .npc-container > .dialog {
   position: absolute;
-  top: -20%;
+  top: 0%;
   left: 50%;
   font-family: "slkscre";
   padding: 12px;
   background-color: rgba(4, 5, 6, 0.85);
   color: white;
   border-radius: 8px;
-  display: none;
 }
 .home-view > .npc-container:hover > .dialog {
   display: block;

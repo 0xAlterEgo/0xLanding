@@ -32,15 +32,16 @@ export default class Home implements View {
                         }
                     }
                 },
-                    el("img", { src: "/images/view/home/play-art.png", alt: "play-art" }),
-                    this.playButton = el(".play-button"),
-                    this.audio = el("audio", { "controls": "", "loop": "", },
-                        el("source", { src: "/video/bgm-loop.mp3", type: "audio/mp3" }),
+                    el("img", { src: "/images/view/home/player.png", alt: "player" }),
+                    el(".play-container",
+                        this.playButton = el(".play-button"),
+                        this.audio = el("audio", { "controls": "", "loop": "", },
+                            el("source", { src: "/video/bgm-loop.mp3", type: "audio/mp3" }),
+                        ),
                     ),
                 ),
                 el(".npc-container",
                     el(".dialog", "Hello...!"),
-                    el("img.npc1", { src: "/images/view/home/npc1.png", alt: "npc" }),
                 ),
             ).appendTo(BodyNode)
         );

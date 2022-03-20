@@ -16,7 +16,9 @@ export default class Layout implements View {
                     el(".nav",
                         el(".logo",
                             el("a", { href: "/app" },
-                                el("h1", "0xALTER EGO")
+                                el("h1",
+                                    el("img.logo", { src: "/images/view/home/logo-alter-ego.png", alt: "logo-alter-ego" }),
+                                )
                             ),
                         ),
                         el("input.menu-btn", { type: "checkbox", id: "menu-btn" }),
@@ -24,10 +26,16 @@ export default class Layout implements View {
                             el("span.navicon")
                         ),
                         el("ul.menu",
-                            el("li.item", el("a", "Home", { href: "/" })),
-                            el("li.item", el("a", "Manifesto", { href: "/manifesto" })),
-                            el("li.item", el("a", "Updates", { href: "/updates" })),
-                            el("li.item", el("a", "Minimap", { href: "/minimap" }))
+                            el("li.item",
+                                el("a", { href: "https://discord.gg/0xalterego", target: "_blank" },
+                                    el("img", { src: "/images/view/home/icn-discord.svg", alt: "discord" }),
+                                )
+                            ),
+                            el("li.item",
+                                el("a", { href: "https://twitter.com/0xalterego_nft", target: "_blank" },
+                                    el("img", { src: "/images/view/home/icn-twitter.svg", alt: "twitter" }),
+                                ),
+                            ),
                         ),
                     )
                 ),

@@ -17,58 +17,64 @@
 
     >.audio-container {
         position        : absolute;
-        display         : fixed;
         bottom          : 0px;
         margin          : 20px;
         border-radius   : 8px;
-        background-color: rgba(99, 46, 207, 0.5);
+        background-color: rgba(0, 0, 0, 0.7);
         box-sizing      : border-box;
         cursor          : pointer;
         display         : inline-block;
-        width           : 110px;
+        width           : 170px;
+        height          : 100px;
         display         : flex;
-        align-items     : center;
+        align-items     : flex-end;
 
-        >img {
-            width : 64px;
-            height: 64px;
-        }
+        >.play-container {
+            height     : 100%;
+            display    : flex;
+            align-items: center;
 
-        >audio {
-            display: none;
-        }
+            >img {
+                height     : 120px;
+                align-items: flex-end;
+            }
 
-        .play-button::before,
-        .play-button.playing::before {
-            content     : '';
-            display     : inline-block;
-            border      : 0;
-            background  : transparent;
-            box-sizing  : border-box;
-            width       : 0;
-            height      : 16px;
-            margin-right: 10px;
-            margin-left : 16px;
+            >audio {
+                display: none;
+            }
 
-            border-color: transparent transparent transparent white;
-            transition  : 100ms all ease;
-            cursor      : pointer;
+            .play-button::before,
+            .play-button.playing::before {
+                content     : '';
+                display     : inline-block;
+                border      : 0;
+                background  : transparent;
+                box-sizing  : border-box;
+                width       : 0;
+                height      : 32px;
+                margin-right: 10px;
+                margin-left : 16px;
 
-            // play state
-            border-style: solid;
-            border-width: 8px 0 8px 12px;
-        }
+                border-color: transparent transparent transparent white;
+                transition  : 100ms all ease;
+                cursor      : pointer;
 
-        .play-button.playing::before {
-            border-style: double;
-            border-width: 0px 0 0px 8px;
+                // play state
+                border-style: solid;
+                border-width: 16px 0 16px 24px;
+            }
+
+            .play-button.playing::before {
+                border-style: double;
+                border-width: 0px 0 0px 16px;
+            }
         }
     }
 
     >.npc-container {
         position: absolute;
-        top     : 65%;
-        left    : 15%;
+        top     : 44%;
+        left    : 27%;
 
         >.npc1 {
             max-width: 128px;
@@ -76,14 +82,13 @@
 
         >.dialog {
             position        : absolute;
-            top             : -20%;
+            top             : 0%;
             left            : 50%;
             font-family     : "slkscre";
             padding         : 12px;
             background-color: rgba(4, 5, 6, 0.85);
             color           : white;
             border-radius   : 8px;
-            display         : none;
         }
 
         &:hover {
