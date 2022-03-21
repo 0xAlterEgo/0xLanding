@@ -423,6 +423,7 @@ body {
 .home-view > .audio-container > .play-container > img {
   height: 120px;
   align-items: flex-end;
+  z-index: 999;
 }
 .home-view > .audio-container > .play-container > audio {
   display: none;
@@ -490,6 +491,9 @@ body {
   color: black;
   border-radius: 8px;
   margin-top: 12px;
+}
+.home-view > .npc-container > .wallet-dialog > a:hover {
+  color: white;
 }
 .home-view > .npc-container > .wallet-dialog:hover {
   border: solid 1px white;
